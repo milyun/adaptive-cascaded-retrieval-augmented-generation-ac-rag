@@ -1,4 +1,6 @@
-# AC-RAG: Extraction and Summarization for Home-Visit Nursing Records
+# Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG)
+
+Extraction and Summarization for Home-Visit Nursing Records.
 
 Research notebooks for the transcript-to-documentation pipeline (information extraction, AC-RAG summarization, and baselines).
 
