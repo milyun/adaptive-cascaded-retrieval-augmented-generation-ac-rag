@@ -6,7 +6,7 @@ Research notebooks for the transcript-to-documentation pipeline (information ext
 
 ## Code availability
 
-The public GitHub repository URL and persistent identifier (for example, a Zenodo DOI) will be added here after the public repository and archival record are created.
+The source code supporting this work is available at [GitHub](https://github.com/milyun/adaptive-cascaded-retrieval-augmented-generation-ac-rag). A persistent identifier (for example, a Zenodo DOI) will be added after the repository is archived. The repository includes the pipeline and prompt notebooks, evaluation modules, configuration, and synthetic input examples; clinical data are not included.
 
 The clinical data (audio, transcripts, nurse-written records, patient profiles) contain personal health information and cannot be released. See the Data Availability statement in the manuscript for the access procedure. `sample_data/` contains synthetic placeholders that document the expected file formats.
 
