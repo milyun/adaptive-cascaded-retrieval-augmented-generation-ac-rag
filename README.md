@@ -6,9 +6,9 @@ Research notebooks for the transcript-to-documentation pipeline (information ext
 
 ## Code availability
 
-The source code supporting this work is available at [GitHub](https://github.com/milyun/adaptive-cascaded-retrieval-augmented-generation-ac-rag). The archived v0.1.0 release is available on Zenodo at [doi:10.5281/zenodo.23656597](https://doi.org/10.5281/zenodo.23656597). The repository includes the pipeline and prompt notebooks, evaluation modules, configuration, and synthetic input examples; clinical data are not included.
+The source code supporting this work is available at [GitHub](https://github.com/milyun/adaptive-cascaded-retrieval-augmented-generation-ac-rag). The archived v0.1.0 release is available on Zenodo at [doi:10.5281/zenodo.23656597](https://doi.org/10.5281/zenodo.23656597). The repository includes the pipeline and prompt notebooks, evaluation modules, configuration, and synthetic example records; clinical data are not included.
 
-The clinical data (audio, transcripts, nurse-written records, patient profiles) contain personal health information and cannot be released. See the Data Availability statement in the manuscript for the access procedure. `sample_data/` contains synthetic placeholders that document the expected file formats.
+The clinical data (audio, transcripts, nurse-written records, patient profiles) contain personal health information and cannot be released. See the Data Availability statement in the manuscript for the access procedure. `sample_data/` contains synthetic example records that document the expected file formats.
 
 ## Setup
 
@@ -28,6 +28,10 @@ Data paths in the notebooks default to `data/`. Place your own data there, follo
 | Configuration | `requirements.txt` |
 | Synthetic input examples | `sample_data/` |
 
+## Suggested Citation
+
+Shoumi MN. Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG): initial public source release, v0.1.0. Zenodo. 2026. doi:10.5281/zenodo.23656597.
+
 ## License
 
-No license has been selected. The code remains subject to its authors' copyright until a license is added.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
