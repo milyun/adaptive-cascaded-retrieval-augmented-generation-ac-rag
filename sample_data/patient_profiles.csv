@@ -1,0 +1,4 @@
+patient_id,disease,gender,age
+P_SYN1,Disease A,M,70
+P_SYN2,Disease A,F,75
+P_SYN3,Disease B,F,68

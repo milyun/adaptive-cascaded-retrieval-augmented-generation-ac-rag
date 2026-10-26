@@ -1,0 +1,31 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+
+# Clinical data and local input directories
+/data/
+/Transcripts*/
+/PrevReports*/
+/patient_profiles*.csv
+/Experiment Result*.csv
+/visiting_forms_ground_truth*.csv
+/extracted_health_info_results*.csv
+/*.xlsx
+
+# Generated results, caches, and evaluation exports
+/cache/
+/experiments/
+/batch_evaluation_results*/
+/clinical_evaluation_results/
+/evaluation_results*/
+/results_*/
+/sensitivity_results/
+/bertscore_consistency_results/
+/*_output*/
+/*_results/
+/*.pkl
+/nurse_evaluation_tool*.html
