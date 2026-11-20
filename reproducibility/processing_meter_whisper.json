@@ -1,0 +1,20 @@
+{
+  "model": "gpt-4o",
+  "api_calls": {
+    "extraction": 89,
+    "embedding": 48,
+    "summary": 89,
+    "total": 226
+  },
+  "tokens_used": {
+    "input_tokens": 1921664,
+    "output_tokens": 72765,
+    "total_tokens": 1994429
+  },
+  "costs": {
+    "extraction_cost": 1.517275,
+    "embedding_cost": 0.006345880000000001,
+    "summary_cost": 3.2213,
+    "total_cost": 4.744920879999999
+  }
+}

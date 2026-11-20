@@ -1,0 +1,9 @@
+{
+  "model": "gpt-4o",
+  "input_tokens": 1448753,
+  "output_tokens": 74647,
+  "total_tokens": 1523400,
+  "total_cost_usd": 3.7833,
+  "total_duration_seconds": 338.0,
+  "average_api_call_seconds": 1.49
+}

@@ -1,0 +1,32 @@
+PROCESSING SUMMARY
+============================================================
+⏱️  TIMING:
+   • Duration: 0h 5m 38s
+   • Start: 07:20:25
+   • End: 07:26:04
+
+📞 API CALLS:
+   • Extraction: 89
+   • Embedding: 50
+   • Summary: 89
+   • Total: 228
+
+🔤 TOKENS USED:
+   • Input tokens: 1,448,753
+   • Output tokens: 74,647
+   • Total tokens: 1,523,400
+
+💰 COSTS:
+   • Extraction Cost: $1.0327
+   • Embedding Cost: $0.0047
+   • Summary Cost: $2.7459
+   • Total Cost: $3.7833
+
+📈 EFFICIENCY:
+   • Average time per API call: 1.49s
+   • Average cost per API call: $0.0166
+============================================================
+
+📊 Final Results:
+   ✅ Success: 89
+   ❌ Failed: 0

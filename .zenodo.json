@@ -1,0 +1,27 @@
+{
+  "title": "Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG): source code and reproducibility materials",
+  "upload_type": "software",
+  "description": "Source code and de-identified reproducibility materials for Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG) for home-visit nursing record extraction and summarization. Clinical source data are not included.",
+  "version": "0.2.0",
+  "license": "MIT",
+  "creators": [
+    { "name": "Shoumi MN" },
+    { "name": "Harada K" },
+    { "name": "Oshita H" },
+    { "name": "Sakashita S" },
+    { "name": "Inoue S" }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23656596",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    }
+  ],
+  "keywords": [
+    "retrieval-augmented generation",
+    "clinical documentation",
+    "home nursing",
+    "reproducibility"
+  ]
+}

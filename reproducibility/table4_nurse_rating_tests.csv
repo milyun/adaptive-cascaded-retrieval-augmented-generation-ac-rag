@@ -1,0 +1,43 @@
+dimension,test,comparison,n,statistic,p_raw,p_adjusted,effect_size,effect_size_name
+accuracy,Friedman,all four systems,23,33.994382022471854,1.986605370866552e-07,,0.4926722032242298,Kendall W
+accuracy,Wilcoxon signed-rank,Zero-Shot vs FS-GKP,23,18.0,0.13166801602281422,0.26333603204562844,-0.45454545454545453,matched-pairs rank-biserial correlation
+accuracy,Wilcoxon signed-rank,Zero-Shot vs Original-RAG,23,40.0,0.06808709686313608,0.20426129058940823,-0.5294117647058824,matched-pairs rank-biserial correlation
+accuracy,Wilcoxon signed-rank,Zero-Shot vs AC-RAG,23,14.0,0.0002669765168534798,0.0013348825842673991,-0.9047619047619048,matched-pairs rank-biserial correlation
+accuracy,Wilcoxon signed-rank,FS-GKP vs Original-RAG,23,16.0,0.22316985425480362,0.26333603204562844,-0.2,matched-pairs rank-biserial correlation
+accuracy,Wilcoxon signed-rank,FS-GKP vs AC-RAG,23,6.5,0.0001494575444658568,0.0008967452667951407,-0.9,matched-pairs rank-biserial correlation
+accuracy,Wilcoxon signed-rank,Original-RAG vs AC-RAG,23,5.5,0.0005572150209222314,0.0022288600836889256,-0.8823529411764706,matched-pairs rank-biserial correlation
+completeness,Friedman,all four systems,22,31.410714285714228,6.96543804968213e-07,,0.4759199134199125,Kendall W
+completeness,Wilcoxon signed-rank,Zero-Shot vs FS-GKP,22,12.0,0.7054569861112734,0.7054569861112734,-0.14285714285714285,matched-pairs rank-biserial correlation
+completeness,Wilcoxon signed-rank,Zero-Shot vs Original-RAG,22,29.5,0.06545288516996875,0.1309057703399375,-0.6,matched-pairs rank-biserial correlation
+completeness,Wilcoxon signed-rank,Zero-Shot vs AC-RAG,22,13.5,0.0007636152970598155,0.0038180764852990775,-0.8947368421052632,matched-pairs rank-biserial correlation
+completeness,Wilcoxon signed-rank,FS-GKP vs Original-RAG,22,14.0,0.035827709496953346,0.10748312849086003,-0.5,matched-pairs rank-biserial correlation
+completeness,Wilcoxon signed-rank,FS-GKP vs AC-RAG,22,5.5,0.0002070196557827867,0.0012421179346967202,-0.8947368421052632,matched-pairs rank-biserial correlation
+completeness,Wilcoxon signed-rank,Original-RAG vs AC-RAG,22,16.0,0.0015343660810215464,0.006137464324086185,-0.7777777777777778,matched-pairs rank-biserial correlation
+hallucination,Friedman,all four systems,24,42.076530612244916,3.864861658278718e-09,,0.5843962585034016,Kendall W
+hallucination,Wilcoxon signed-rank,Zero-Shot vs FS-GKP,24,33.5,0.6442584387609425,0.6442584387609425,0.0,matched-pairs rank-biserial correlation
+hallucination,Wilcoxon signed-rank,Zero-Shot vs Original-RAG,24,37.0,0.16478289222860465,0.3295657844572093,-0.4666666666666667,matched-pairs rank-biserial correlation
+hallucination,Wilcoxon signed-rank,Zero-Shot vs AC-RAG,24,6.0,5.5614183471554863e-05,0.0002780709173577743,-0.9090909090909091,matched-pairs rank-biserial correlation
+hallucination,Wilcoxon signed-rank,FS-GKP vs Original-RAG,24,11.0,0.032509444645719525,0.09752833393715857,-0.6363636363636364,matched-pairs rank-biserial correlation
+hallucination,Wilcoxon signed-rank,FS-GKP vs AC-RAG,24,0.0,1.6238231889409905e-05,9.742939133645943e-05,-1.0,matched-pairs rank-biserial correlation
+hallucination,Wilcoxon signed-rank,Original-RAG vs AC-RAG,24,19.0,0.00015747958411233793,0.0006299183364493517,-0.8260869565217391,matched-pairs rank-biserial correlation
+safety,Friedman,all four systems,25,42.60000000000001,2.992472758095836e-09,,0.5680000000000001,Kendall W
+safety,Wilcoxon signed-rank,Zero-Shot vs FS-GKP,25,15.5,0.7192640278554812,0.7192640278554812,-0.25,matched-pairs rank-biserial correlation
+safety,Wilcoxon signed-rank,Zero-Shot vs Original-RAG,25,37.5,0.012700350614642966,0.025400701229285932,-0.6842105263157895,matched-pairs rank-biserial correlation
+safety,Wilcoxon signed-rank,Zero-Shot vs AC-RAG,25,6.5,7.14453871223035e-05,0.0003572269356115175,-0.9090909090909091,matched-pairs rank-biserial correlation
+safety,Wilcoxon signed-rank,FS-GKP vs Original-RAG,25,14.0,0.007632881787792299,0.022898645363376897,-0.7142857142857143,matched-pairs rank-biserial correlation
+safety,Wilcoxon signed-rank,FS-GKP vs AC-RAG,25,0.0,2.1134876647715304e-05,0.00012680925988629182,-1.0,matched-pairs rank-biserial correlation
+safety,Wilcoxon signed-rank,Original-RAG vs AC-RAG,25,18.0,0.00045300266301982246,0.0018120106520792898,-0.8,matched-pairs rank-biserial correlation
+format,Friedman,all four systems,26,43.740000000000045,1.7138312983124373e-09,,0.5607692307692314,Kendall W
+format,Wilcoxon signed-rank,Zero-Shot vs FS-GKP,26,24.0,0.6978013350845087,0.6978013350845087,-0.2,matched-pairs rank-biserial correlation
+format,Wilcoxon signed-rank,Zero-Shot vs Original-RAG,26,17.0,0.0025630156109111377,0.007689046832733413,-0.7647058823529411,matched-pairs rank-biserial correlation
+format,Wilcoxon signed-rank,Zero-Shot vs AC-RAG,26,5.5,4.065573879796076e-05,0.00024393443278776457,-0.9130434782608695,matched-pairs rank-biserial correlation
+format,Wilcoxon signed-rank,FS-GKP vs Original-RAG,26,11.5,0.013270961546003728,0.026541923092007456,-0.8461538461538461,matched-pairs rank-biserial correlation
+format,Wilcoxon signed-rank,FS-GKP vs AC-RAG,26,6.0,4.183805292514874e-05,0.00024393443278776457,-0.9130434782608695,matched-pairs rank-biserial correlation
+format,Wilcoxon signed-rank,Original-RAG vs AC-RAG,26,19.0,0.00018559413043658883,0.0007423765217463553,-0.8181818181818182,matched-pairs rank-biserial correlation
+usefulness,Friedman,all four systems,26,47.98578199052138,2.144368198486062e-10,,0.6152023332118126,Kendall W
+usefulness,Wilcoxon signed-rank,Zero-Shot vs FS-GKP,26,37.5,0.5383007490187228,0.5383007490187228,-0.23076923076923078,matched-pairs rank-biserial correlation
+usefulness,Wilcoxon signed-rank,Zero-Shot vs Original-RAG,26,18.0,0.00702157395317671,0.0179809409113049,-0.625,matched-pairs rank-biserial correlation
+usefulness,Wilcoxon signed-rank,Zero-Shot vs AC-RAG,26,6.0,1.8752590429846002e-05,9.376295214923001e-05,-0.92,matched-pairs rank-biserial correlation
+usefulness,Wilcoxon signed-rank,FS-GKP vs Original-RAG,26,14.5,0.005993646970434967,0.0179809409113049,-0.8666666666666667,matched-pairs rank-biserial correlation
+usefulness,Wilcoxon signed-rank,FS-GKP vs AC-RAG,26,0.0,1.2837744618433384e-05,7.70264677106003e-05,-1.0,matched-pairs rank-biserial correlation
+usefulness,Wilcoxon signed-rank,Original-RAG vs AC-RAG,26,20.0,0.00010154107211174798,0.0004061642884469919,-0.8333333333333334,matched-pairs rank-biserial correlation

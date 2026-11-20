@@ -1,0 +1,3 @@
+asr,input_tokens,output_tokens,cost_usd,processing_time_sec,scope
+Deepgram,761227,222083,7.1374,3817.08,aggregate_only
+Whisper,960958,223603,8.1588,1852.4,aggregate_only

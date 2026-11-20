@@ -1,0 +1,5 @@
+=== Summary ===
+Total input tokens: 761227
+Total output tokens: 222083
+Total estimated cost: $7.1374
+Total processing time: 3817.08 sec

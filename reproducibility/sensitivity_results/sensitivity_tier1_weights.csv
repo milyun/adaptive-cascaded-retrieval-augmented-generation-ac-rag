@@ -1,0 +1,6 @@
+w_age,w_gender,mean_kendall_tau,mean_jaccard_top3,patients_context_changed
+0.5,0.5,0.95,0.9844,1
+0.6,0.4,1.0,1.0,0
+0.7,0.3,1.0,1.0,0
+0.8,0.2,0.7833,0.9844,1
+0.9,0.1,0.7833,0.9844,1

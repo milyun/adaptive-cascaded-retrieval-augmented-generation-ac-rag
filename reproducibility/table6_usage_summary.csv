@@ -1,0 +1,33 @@
+configuration,metric,value,unit,basis
+AC-RAG_Deepgram,processing_time_per_consultation,4.8,sec,reported Table 6; saved timing logs do not fully reconcile
+AC-RAG_Deepgram,processing_time_total,7.1,min,reported Table 6; saved timing logs do not fully reconcile
+AC-RAG_Deepgram,api_cost_per_consultation,0.043,USD,meter or token totals at Table 6 rates
+AC-RAG_Deepgram,api_cost_total_89_cases,3.78,USD,meter or token totals at Table 6 rates
+AC-RAG_Deepgram,input_tokens_per_case,13627,tokens,meter input minus estimated embedding tokens; divided by 89
+AC-RAG_Deepgram,embedding_tokens_per_case,2651,tokens,estimated from logged embedding cost; allocated per consultation
+AC-RAG_Deepgram,output_tokens_per_case,839,tokens,meter or combined stage totals
+AC-RAG_Whisper,processing_time_per_consultation,3.3,sec,reported Table 6; saved timing logs do not fully reconcile
+AC-RAG_Whisper,processing_time_total,4.9,min,reported Table 6; saved timing logs do not fully reconcile
+AC-RAG_Whisper,api_cost_per_consultation,0.053,USD,meter or token totals at Table 6 rates
+AC-RAG_Whisper,api_cost_total_89_cases,4.74,USD,meter or token totals at Table 6 rates
+AC-RAG_Whisper,input_tokens_per_case,18027,tokens,meter input minus estimated embedding tokens; divided by 89
+AC-RAG_Whisper,embedding_tokens_per_case,3565,tokens,summed from Whisper API call log
+AC-RAG_Whisper,output_tokens_per_case,818,tokens,meter or combined stage totals
+FS-GKP_Deepgram,processing_time_per_consultation,53.4,sec,reported Table 6; saved timing logs do not fully reconcile
+FS-GKP_Deepgram,processing_time_total,79.2,min,reported Table 6; saved timing logs do not fully reconcile
+FS-GKP_Deepgram,api_cost_per_consultation,0.063,USD,meter or token totals at Table 6 rates
+FS-GKP_Deepgram,api_cost_total_89_cases,5.62,USD,meter or token totals at Table 6 rates
+FS-GKP_Deepgram,input_tokens_per_case,12070,tokens,stage 1 per-visit logs plus stage 2 aggregate logs; divided by 89
+FS-GKP_Deepgram,embedding_tokens_per_case,0,tokens,not applicable to FS-GKP
+FS-GKP_Deepgram,output_tokens_per_case,3295,tokens,meter or combined stage totals
+FS-GKP_Whisper,processing_time_per_consultation,31.6,sec,reported Table 6; saved timing logs do not fully reconcile
+FS-GKP_Whisper,processing_time_total,46.9,min,reported Table 6; saved timing logs do not fully reconcile
+FS-GKP_Whisper,api_cost_per_consultation,0.074,USD,meter or token totals at Table 6 rates
+FS-GKP_Whisper,api_cost_total_89_cases,6.58,USD,meter or token totals at Table 6 rates
+FS-GKP_Whisper,input_tokens_per_case,16516,tokens,stage 1 per-visit logs plus stage 2 aggregate logs; divided by 89
+FS-GKP_Whisper,embedding_tokens_per_case,0,tokens,not applicable to FS-GKP
+FS-GKP_Whisper,output_tokens_per_case,3269,tokens,meter or combined stage totals
+AC-RAG_Deepgram,api_cost_relative_to_fsgkp,-32.7,%,(AC-RAG - FS-GKP) / FS-GKP
+AC-RAG_Whisper,api_cost_relative_to_fsgkp,-27.9,%,(AC-RAG - FS-GKP) / FS-GKP
+FS-GKP_Deepgram,api_cost_relative_to_fsgkp,,%,reference
+FS-GKP_Whisper,api_cost_relative_to_fsgkp,,%,reference

@@ -1,0 +1,81 @@
+category,term,english_gloss,generic_term
+Medications,ニトロ,nitroglycerin (Nitro),false
+Medications,コーラック,Colac (laxative),false
+Medications,リンゼス,Linzess (linaclotide),false
+Medications,モビコール,Movicol (macrogol),false
+Medications,ベタヒスメチル,betahistine mesilate,false
+Medications,ニュープロパッチ,Neupro patch (rotigotine),false
+Medications,内服,oral medication,false
+Medications,服薬,taking medication,false
+Medications,薬,medicine,true
+Medications,mg,milligram,false
+Medications,ml,millilitre,false
+Medications,錠,tablet,false
+Medications,アリセプト,Aricept (donepezil),false
+Medications,メマリー,Memary (memantine),false
+Medications,レミニール,Reminyl (galantamine),false
+Medications,ラシックス,Lasix (furosemide),false
+Medications,ノルバスク,Norvasc (amlodipine),false
+Medications,プレドニン,Predonine (prednisolone),false
+Medications,リリカ,Lyrica (pregabalin),false
+Medications,カロナール,Calonal (acetaminophen),false
+Medications,ロキソニン,Loxonin (loxoprofen),false
+Procedures,入浴,bathing,false
+Procedures,更衣,changing clothes,false
+Procedures,処置,treatment / procedure,true
+Procedures,訓練,training / exercise,true
+Procedures,マッサージ,massage,false
+Procedures,観察,observation,true
+Procedures,リハビリ,rehabilitation,true
+Procedures,食事介助,feeding assistance,false
+Procedures,排泄介助,toileting assistance,false
+Procedures,移乗,transfer,false
+Procedures,体位変換,repositioning,false
+Procedures,清拭,bed bath,false
+Procedures,口腔ケア,oral care,false
+Procedures,爪切り,nail trimming,false
+Procedures,整容,grooming,false
+Procedures,歩行介助,walking assistance,false
+Procedures,見守り,supervision / watching over,false
+Procedures,声かけ,verbal prompting,false
+Symptoms,痛み,pain,false
+Symptoms,痺れ,numbness,false
+Symptoms,発熱,fever,false
+Symptoms,転倒,fall,false
+Symptoms,嘔吐,vomiting,false
+Symptoms,下痢,diarrhoea,false
+Symptoms,便秘,constipation,false
+Symptoms,排便,defecation,false
+Symptoms,耳鳴り,tinnitus,false
+Symptoms,頭痛,headache,false
+Symptoms,掻痒感,pruritus,false
+Symptoms,かゆみ,itching,false
+Symptoms,痰,sputum,false
+Symptoms,息苦しい,breathlessness,false
+Symptoms,動悸,palpitations,false
+Diseases,認知症,dementia,false
+Diseases,パーキンソン病,Parkinson disease,false
+Diseases,糖尿病,diabetes,false
+Diseases,高血圧,hypertension,false
+Diseases,心不全,heart failure,false
+Diseases,脳梗塞,cerebral infarction,false
+Diseases,褥瘡,pressure ulcer,false
+Diseases,誤嚥,aspiration,false
+Diseases,肺炎,pneumonia,false
+Diseases,骨折,fracture,false
+Diseases,浮腫,oedema,false
+Diseases,脱水,dehydration,false
+Body parts,右足,right leg / foot,false
+Body parts,左足,left leg / foot,false
+Body parts,上肢,upper limb,false
+Body parts,下肢,lower limb,false
+Body parts,腹部,abdomen,false
+Body parts,胸部,chest,false
+Body parts,頭部,head,false
+Body parts,膝,knee,false
+Vital signs,血圧,blood pressure,false
+Vital signs,脈拍,pulse,false
+Vital signs,体温,body temperature,false
+Vital signs,酸素,oxygen,false
+Vital signs,SpO2,oxygen saturation,false
+Vital signs,バイタル,vital signs,true

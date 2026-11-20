@@ -1,0 +1,4 @@
+configuration,mean_kendall_tau,mean_jaccard_top3,patients_context_changed
+tight,0.8,1.0,0
+default,1.0,1.0,0
+loose,0.7333,1.0,0
