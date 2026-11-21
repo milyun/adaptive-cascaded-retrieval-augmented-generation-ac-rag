@@ -105,6 +105,8 @@ def write_table3_pairwise_effect_sizes(detailed: pd.DataFrame, output_dir: Path)
         for first, second in itertools.combinations(available, 2):
             first_strategy, first_asr, first_column = first
             second_strategy, second_asr, second_column = second
+            if first_asr != second_asr:
+                continue
             first_values = pd.to_numeric(detailed[first_column], errors="coerce").to_numpy(float)
             second_values = pd.to_numeric(detailed[second_column], errors="coerce").to_numpy(float)
             if not np.isfinite(first_values).all() or not np.isfinite(second_values).all():
@@ -259,10 +261,77 @@ def write_table5(detailed: pd.DataFrame, assignments: pd.DataFrame, output_dir: 
     pd.DataFrame(pair_rows).to_csv(output_dir / "table5_bertscore_mann_whitney.csv", index=False)
 
 
+def write_table5_ablation(per_visit_path: Path, output_dir: Path) -> None:
+    if not per_visit_path.is_file():
+        return
+    frame = pd.read_csv(per_visit_path)
+    labels = {
+        "hybrid": "Hybrid",
+        "history_only": "History-Only",
+        "cross_patient_only": "Cross-Patient-Only",
+        "no_rag": "No-RAG",
+    }
+    metric_names = [
+        "composite_semantic",
+        "tfidf_cosine_mecab",
+        "char_similarity",
+        "jaccard_similarity",
+        "trigram_similarity",
+        "bleu_4",
+        "rougeL_char",
+    ]
+    required = {"strategy", *metric_names}
+    if not required.issubset(frame.columns) or len(frame) != 178:
+        raise ValueError("Ablation input must contain 178 pooled ASR summaries")
+    summary_rows = []
+    pair_rows = []
+    values_by_strategy = {}
+    for strategy_key, strategy_label in labels.items():
+        subset = frame.loc[frame["strategy"].eq(strategy_key)]
+        if subset.empty:
+            raise ValueError(f"Missing ablation strategy: {strategy_key}")
+        values_by_strategy[strategy_key] = subset
+        for metric in metric_names:
+            values = pd.to_numeric(subset[metric], errors="coerce").dropna()
+            summary_rows.append({
+                "strategy": strategy_label,
+                "n": int(values.size),
+                "metric": metric,
+                "mean": float(values.mean()),
+                "sd_sample": float(values.std(ddof=1)),
+            })
+    for first_key, second_key in itertools.combinations(labels, 2):
+        for metric in metric_names:
+            first = pd.to_numeric(values_by_strategy[first_key][metric], errors="coerce").dropna().to_numpy(float)
+            second = pd.to_numeric(values_by_strategy[second_key][metric], errors="coerce").dropna().to_numpy(float)
+            if len(first) < 2 or len(second) < 2:
+                continue
+            test = stats.mannwhitneyu(first, second, alternative="two-sided", method="asymptotic")
+            pooled_sd = np.sqrt(
+                ((len(first) - 1) * first.var(ddof=1) + (len(second) - 1) * second.var(ddof=1))
+                / (len(first) + len(second) - 2)
+            )
+            cohens_d = float(abs(first.mean() - second.mean()) / pooled_sd) if pooled_sd else 0.0
+            pair_rows.append({
+                "metric": metric,
+                "strategy_1": labels[first_key],
+                "strategy_2": labels[second_key],
+                "n_1": len(first),
+                "n_2": len(second),
+                "test": "Mann-Whitney U",
+                "statistic": float(test.statistic),
+                "p_two_sided": float(test.pvalue),
+                "abs_cohens_d": cohens_d,
+            })
+    pd.DataFrame(summary_rows).to_csv(output_dir / "table5_ablation_summary.csv", index=False)
+    pd.DataFrame(pair_rows).to_csv(output_dir / "table5_ablation_pairwise.csv", index=False)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--detailed", type=Path, required=True, help="De-identified detailed_per_sample_results.csv")
     parser.add_argument("--strategy-assignments", type=Path, required=True, help="De-identified visit_id/asr/strategy CSV")
+    parser.add_argument("--ablation-per-visit", type=Path, help="Local pooled 178-row ablation per-visit CSV")
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).parent)
     args = parser.parse_args()
     output_dir = args.output_dir.resolve()
@@ -272,6 +341,7 @@ def main() -> None:
     write_table3_pairwise_effect_sizes(detailed, output_dir)
     write_table4_friedman_wilcoxon(detailed, output_dir)
     write_table5(detailed, assignments, output_dir)
+    write_table5_ablation(args.ablation_per_visit.resolve() if args.ablation_per_visit else Path(), output_dir)
     print(f"Saved de-identified Tables 3-5 statistics to {output_dir}")
 
 

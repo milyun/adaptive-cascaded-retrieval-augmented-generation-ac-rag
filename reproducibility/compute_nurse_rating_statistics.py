@@ -57,12 +57,17 @@ def compute(input_xlsx: Path, output_dir: Path) -> None:
     long = pd.DataFrame(long_rows)
     if long.empty:
         raise ValueError("No nurse ratings found")
-    case_means = long.groupby(["case", "system", "dimension"], as_index=False)["rating"].mean()
+    first = (
+        long.dropna(subset=["rating"])
+        .sort_index()
+        .drop_duplicates(["case", "system", "dimension"], keep="first")
+    )
+    first_values = first
 
     summary_rows = []
     test_rows = []
     for dimension in DIMS:
-        subset = case_means.loc[case_means["dimension"].eq(dimension)]
+        subset = first_values.loc[first_values["dimension"].eq(dimension)]
         wide = subset.pivot(index="case", columns="system", values="rating")
         wide = wide.reindex(columns=SYSTEMS).dropna()
         if len(wide) < 2:

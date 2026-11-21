@@ -6,7 +6,7 @@ Research notebooks for the transcript-to-documentation pipeline (information ext
 
 ## Code availability
 
-The source code supporting this work is available at [GitHub](https://github.com/milyun/adaptive-cascaded-retrieval-augmented-generation-ac-rag). The archived v0.1.0 release is available on Zenodo at [doi:10.5281/zenodo.23656597](https://doi.org/10.5281/zenodo.23656597), and v0.2.0 is archived at [doi:10.5281/zenodo.24398560](https://doi.org/10.5281/zenodo.24398560). The Zenodo concept DOI is [10.5281/zenodo.23656596](https://doi.org/10.5281/zenodo.23656596). The repository includes the pipeline and prompt notebooks, evaluation modules, configuration, and synthetic example records; clinical data are not included.
+The source code supporting this work is available at [GitHub](https://github.com/milyun/adaptive-cascaded-retrieval-augmented-generation-ac-rag). The archived v0.1.0 release is available on Zenodo at [doi:10.5281/zenodo.23656597](https://doi.org/10.5281/zenodo.23656597), and v0.2.0 is archived at [doi:10.5281/zenodo.24398560](https://doi.org/10.5281/zenodo.24398560). Release v0.2.1 is prepared for publication; its version-specific Zenodo DOI will be reported after the archive is published. The Zenodo concept DOI is [10.5281/zenodo.23656596](https://doi.org/10.5281/zenodo.23656596). The repository includes the pipeline and prompt notebooks, evaluation modules, configuration, and synthetic example records; clinical data are not included.
 
 The clinical data (audio, transcripts, nurse-written records, patient profiles) contain personal health information and cannot be released. See the Data Availability statement in the manuscript for the access procedure. `sample_data/` contains synthetic example records that document the expected file formats.
 
@@ -44,19 +44,19 @@ For a full evaluation, run `batch_evaluate_all_systems.py --source-dir <local-da
 | Table 3 effect sizes | `reproducibility/compute_tables3_5_statistics.py` | `table3_pairwise_effect_sizes.csv` |
 | Table 4 Friedman/Wilcoxon tests | `reproducibility/compute_tables3_5_statistics.py` | `table4_friedman_wilcoxon.csv` |
 | Table 4 nurse ratings | `reproducibility/compute_nurse_rating_statistics.py` | `table4_nurse_rating_summary.csv`, `table4_nurse_rating_tests.csv` |
-| Table 5 | `reproducibility/compute_tables3_5_statistics.py` | `table5_bertscore_summary.csv`, `table5_bertscore_mann_whitney.csv` |
+| Table 5 | `reproducibility/compute_tables3_5_statistics.py` | `table5_bertscore_summary.csv`, `table5_bertscore_mann_whitney.csv`, `table5_ablation_summary.csv`, `table5_ablation_pairwise.csv` |
 | Table 6 | `reproducibility/export_deidentified_outputs.py`, `reproducibility/reprice_fsgkp_table6.py` | `table6_usage_summary.csv`, `processing_meter_deepgram.json`, `api_call_log_whisper.csv`, `processing_meter_whisper.json`, `table6_logs/acrag_deepgram_meter_20260107.txt`, `table6_logs/fsgkp_stage1_extraction_*.csv`, `table6_logs/fsgkp_stage2_summary_*.txt`, `table6_logs/fsgkp_stage2_summary_totals.csv`, `table6_logs/fsgkp_repriced_costs.csv` |
 | Figure 2 | `reproducibility/generate_jmir_figures.py` | `jmir_figures/Figure2_Method_Comparison.png` and `.pdf` |
 | Figure 3 | `reproducibility/generate_jmir_figures.py` | `jmir_figures/Figure3_Performance_Heatmap.png` and `.pdf` |
 | Figure 4 | `reproducibility/generate_jmir_figures.py` | `jmir_figures/Figure4_ASR_Comparison.png` and `.pdf` |
 | Figure 5 | `reproducibility/generate_jmir_figures.py` | `jmir_figures/Figure5_Radar_Chart_Top4.png` and `.pdf` |
-| Figure 6 | `reproducibility/generate_nurse_rating_figure.py` | `figures/Figure6_nurse_ratings.png` and `.pdf` |
+| Figure 6 | `reproducibility/generate_nurse_rating_figure.py` | Run with `--output-dir <local-output-dir>`; the script is provided but no private nurse-rating workbook or generated figure is released. |
 | Multimedia Appendix 3 sensitivity analysis | `reproducibility/sensitivity_analysis_e11.py`, `reproducibility/export_sensitivity_summaries.py` | Aggregate CSVs in `reproducibility/sensitivity_results/` |
 | Multimedia Appendix 4 entity-recall audit | `reproducibility/export_entity_dictionary.py`, `reproducibility/export_entity_recall_audit.py` | `reproducibility/entity_recall_audit/entity_dictionary.csv`, `entity_recall_term_list.csv` |
 
 ## Suggested Citation
 
-Shoumi MN, Harada K, Oshita H, Sakashita S, Inoue S. Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG): source code and reproducibility materials, v0.2.0. Zenodo. 2026. [doi:10.5281/zenodo.24398560](https://doi.org/10.5281/zenodo.24398560).
+Shoumi MN, Harada K, Oshita H, Sakashita S, Inoue S. Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG): source code and reproducibility materials, v0.2.1. Zenodo. 2026. Version-specific DOI pending publication.
 
 ## License
 

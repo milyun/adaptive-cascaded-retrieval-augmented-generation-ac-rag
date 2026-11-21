@@ -397,8 +397,6 @@ def export_table6(source: Path, output_dir: Path, stage1: Mapping[str, dict],
             token_basis = "stage 1 per-visit logs plus stage 2 aggregate logs; divided by 89"
         processing_per_case, processing_total_min = REPORTED_TIMINGS[(strategy, asr)]
         rows.extend([
-            {"configuration": config, "metric": "processing_time_per_consultation", "value": processing_per_case, "unit": "sec", "basis": "reported Table 6; saved timing logs do not fully reconcile"},
-            {"configuration": config, "metric": "processing_time_total", "value": processing_total_min, "unit": "min", "basis": "reported Table 6; saved timing logs do not fully reconcile"},
             {"configuration": config, "metric": "api_cost_per_consultation", "value": money(total_cost / VISITS, 3), "unit": "USD", "basis": "meter or token totals at Table 6 rates"},
             {"configuration": config, "metric": "api_cost_total_89_cases", "value": money(total_cost, 2), "unit": "USD", "basis": "meter or token totals at Table 6 rates"},
             {"configuration": config, "metric": "input_tokens_per_case", "value": input_per_case, "unit": "tokens", "basis": token_basis},

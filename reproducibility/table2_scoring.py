@@ -1,6 +1,7 @@
 """Table 2 extraction scoring with release-safe aggregate and flag-only outputs."""
 
 import csv
+import json
 import re
 from collections import Counter
 from pathlib import Path
@@ -21,8 +22,8 @@ PARAMETERS = {
     "Appetite": ("食欲", "binary"),
 }
 SYSTEMS = [
-    ("AC-RAG", "Deepgram", "visiting_forms_ground_truth_ACRAG_deepgram_v1.csv", "File Name", "LLM based summarization", "acrag"),
-    ("AC-RAG", "Whisper", "visiting_forms_ground_truth_ACRAG_whisper_v1.csv", "File Name", "LLM based summarization", "acrag"),
+    ("Conservative", "Deepgram", "visiting_forms_ground_truth_ACRAG_deepgram_v1.csv", "File Name", "LLM based summarization", "conservative"),
+    ("Conservative", "Whisper", "visiting_forms_ground_truth_ACRAG_whisper_v1.csv", "File Name", "LLM based summarization", "conservative"),
     ("FS-GKP", "Deepgram", "extracted_health_info_results_fs-gkp_deepgram.csv", "file", "key_info", "fsgkp"),
     ("FS-GKP", "Whisper", "extracted_health_info_results_fs-gkp_whisper.csv", "file", "key_info", "fsgkp"),
 ]
@@ -130,6 +131,26 @@ def value_matches(kind: str, reference: str, prediction: str) -> bool:
     return reference == prediction
 
 
+def normalize_stage1(parameter_jp: str, raw_value: object) -> Optional[str]:
+    if raw_value is None or str(raw_value).strip().lower() in ("", "none", "null", "nan"):
+        return None
+    text = str(raw_value).strip()
+    if parameter_jp == "血圧":
+        match = re.search(r"(\d+)\s*[-−‐‑–—/／:]\s*(\d+)", text)
+        return f"{match.group(1)}/{match.group(2)}" if match else None
+    if parameter_jp in ("排便", "食欲"):
+        compact = re.sub(r"\s+", "", text)
+        if compact.startswith(("有", "あり")):
+            return "有"
+        if compact.startswith(("無", "なし", "ない")):
+            return "無"
+        return None
+    if parameter_jp == "SPO2" and re.search(r"\d\s*[-−‐‑–—~〜～]\s*\d", text):
+        return None
+    match = re.search(r"\d+(?:\.\d+)?", text)
+    return match.group(0) if match else None
+
+
 def _read_inputs(source: Path):
     ground_truth = read_csv(source / "Experiment Result - Information extraction and Summarization - Ground Truth (2).csv")
     gt_by_key = {}
@@ -140,6 +161,29 @@ def _read_inputs(source: Path):
         gt_by_key[key] = row
     inputs = {}
     for strategy, asr, filename, id_column, text_column, kind in SYSTEMS:
+        if kind == "conservative":
+            json_directory = source / f"cross_patient_rag_output_{asr.lower()}_v1_2" / "extraction_results"
+            result = {}
+            for json_path in sorted(json_directory.glob("*.json")):
+                item = json.loads(json_path.read_text(encoding="utf-8"))
+                key = extract_audio_key(str(item.get("transcript_file", "")))
+                if not key:
+                    continue
+                if key in result:
+                    raise ValueError(f"Duplicate conservative Stage 1 key: {asr}, {key}")
+                extraction = item.get("extraction_data")
+                if not isinstance(extraction, dict):
+                    raise ValueError(f"Missing extraction_data in {json_path}")
+                parsed = {}
+                for jp, _kind in PARAMETERS.values():
+                    entry = extraction.get(jp)
+                    value = entry.get("value") if isinstance(entry, dict) else entry
+                    parsed[jp] = normalize_stage1(jp, value)
+                result[key] = parsed
+            if len(result) != EXPECTED_VISITS:
+                raise ValueError(f"Expected {EXPECTED_VISITS} conservative Stage 1 outputs for {asr}")
+            inputs[(strategy, asr)] = (result, "stage1")
+            continue
         system_rows = read_csv(source / filename)
         result = {}
         for row in system_rows:
@@ -166,13 +210,15 @@ def score_table2(source: Path, output_dir: Path) -> Tuple[int, Dict[str, str]]:
     summary = {}
     total_scorable = 0
 
-    parsed = {
-        config: {
-            key: (parse_acrag(text) if parser_kind == "acrag" else parse_fsgkp(text))
-            for key, text in predictions.items()
-        }
-        for config, (predictions, parser_kind) in systems.items()
-    }
+    parsed = {}
+    for config, (predictions, parser_kind) in systems.items():
+        if parser_kind == "stage1":
+            parsed[config] = predictions
+        else:
+            parsed[config] = {
+                key: (parse_acrag(text) if parser_kind == "acrag" else parse_fsgkp(text))
+                for key, text in predictions.items()
+            }
 
     for display_name, (jp, kind) in PARAMETERS.items():
         scorable = sum(

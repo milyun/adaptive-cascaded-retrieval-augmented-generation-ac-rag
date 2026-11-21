@@ -1,33 +1,33 @@
 parameter,strategy,asr,T,TP,FP,FN,precision_pct,recall_pct,f1_pct
-Body Temperature (°C),AC-RAG,Deepgram,89,8,0,81,100.0,9.0,16.5
-Body Temperature (°C),AC-RAG,Whisper,89,14,3,75,82.4,15.7,26.4
+Body Temperature (°C),Conservative,Deepgram,89,7,0,82,100.0,7.9,14.6
+Body Temperature (°C),Conservative,Whisper,89,14,2,75,87.5,15.7,26.7
 Body Temperature (°C),FS-GKP,Deepgram,89,83,6,6,93.3,93.3,93.3
 Body Temperature (°C),FS-GKP,Whisper,89,81,8,8,91.0,91.0,91.0
-Blood Pressure (mmHg),AC-RAG,Deepgram,87,7,3,80,70.0,8.0,14.4
-Blood Pressure (mmHg),AC-RAG,Whisper,87,11,12,76,47.8,12.6,20.0
+Blood Pressure (mmHg),Conservative,Deepgram,87,9,5,78,64.3,10.3,17.8
+Blood Pressure (mmHg),Conservative,Whisper,87,17,17,70,50.0,19.5,28.1
 Blood Pressure (mmHg),FS-GKP,Deepgram,87,9,79,78,10.2,10.3,10.3
 Blood Pressure (mmHg),FS-GKP,Whisper,87,20,68,67,22.7,23.0,22.9
-Pulse (bpm),AC-RAG,Deepgram,89,1,3,88,25.0,1.1,2.2
-Pulse (bpm),AC-RAG,Whisper,89,1,0,88,100.0,1.1,2.2
+Pulse (bpm),Conservative,Deepgram,89,1,1,88,50.0,1.1,2.2
+Pulse (bpm),Conservative,Whisper,89,4,1,85,80.0,4.5,8.5
 Pulse (bpm),FS-GKP,Deepgram,89,5,84,84,5.6,5.6,5.6
 Pulse (bpm),FS-GKP,Whisper,89,5,84,84,5.6,5.6,5.6
-Respiratory Rate (bpm),AC-RAG,Deepgram,82,1,1,81,50.0,1.2,2.4
-Respiratory Rate (bpm),AC-RAG,Whisper,82,1,0,81,100.0,1.2,2.4
+Respiratory Rate (bpm),Conservative,Deepgram,82,1,1,81,50.0,1.2,2.4
+Respiratory Rate (bpm),Conservative,Whisper,82,1,1,81,50.0,1.2,2.4
 Respiratory Rate (bpm),FS-GKP,Deepgram,82,49,40,33,55.1,59.8,57.3
 Respiratory Rate (bpm),FS-GKP,Whisper,82,45,44,37,50.6,54.9,52.6
-SpO2 (%),AC-RAG,Deepgram,85,0,1,85,0.0,0.0,0
-SpO2 (%),AC-RAG,Whisper,85,1,0,84,100.0,1.2,2.3
+SpO2 (%),Conservative,Deepgram,85,2,4,83,33.3,2.4,4.4
+SpO2 (%),Conservative,Whisper,85,5,3,80,62.5,5.9,10.8
 SpO2 (%),FS-GKP,Deepgram,85,14,75,71,15.7,16.5,16.1
 SpO2 (%),FS-GKP,Whisper,85,16,73,69,18.0,18.8,18.4
-Defecation,AC-RAG,Deepgram,87,8,9,79,47.1,9.2,15.4
-Defecation,AC-RAG,Whisper,87,12,3,75,80.0,13.8,23.5
+Defecation,Conservative,Deepgram,87,36,7,51,83.7,41.4,55.4
+Defecation,Conservative,Whisper,87,37,10,50,78.7,42.5,55.2
 Defecation,FS-GKP,Deepgram,87,62,27,25,69.7,71.3,70.5
 Defecation,FS-GKP,Whisper,87,50,39,37,56.2,57.5,56.8
-Appetite,AC-RAG,Deepgram,82,10,7,72,58.8,12.2,20.2
-Appetite,AC-RAG,Whisper,82,7,6,75,53.8,8.5,14.7
+Appetite,Conservative,Deepgram,82,33,15,49,68.8,40.2,50.8
+Appetite,Conservative,Whisper,82,40,15,42,72.7,48.8,58.4
 Appetite,FS-GKP,Deepgram,82,64,25,18,71.9,78.0,74.9
 Appetite,FS-GKP,Whisper,82,62,27,20,69.7,75.6,72.5
-Overall (micro),AC-RAG,Deepgram,601,35,24,566,59.3,5.8,10.6
-Overall (micro),AC-RAG,Whisper,601,47,24,554,66.2,7.8,14.0
+Overall (micro),Conservative,Deepgram,601,89,33,512,73.0,14.8,24.6
+Overall (micro),Conservative,Whisper,601,118,49,483,70.7,19.6,30.7
 Overall (micro),FS-GKP,Deepgram,601,286,336,315,46.0,47.6,46.8
 Overall (micro),FS-GKP,Whisper,601,279,343,322,44.9,46.4,45.6
