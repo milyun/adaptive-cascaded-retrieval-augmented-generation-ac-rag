@@ -178,7 +178,10 @@ def _read_inputs(source: Path):
                 for jp, _kind in PARAMETERS.values():
                     entry = extraction.get(jp)
                     value = entry.get("value") if isinstance(entry, dict) else entry
-                    parsed[jp] = normalize_stage1(jp, value)
+                    parsed[jp] = {
+                        "normalized": normalize_stage1(jp, value),
+                        "present": value is not None and str(value).strip().lower() not in ("", "none", "null", "nan"),
+                    }
                 result[key] = parsed
             if len(result) != EXPECTED_VISITS:
                 raise ValueError(f"Expected {EXPECTED_VISITS} conservative Stage 1 outputs for {asr}")
@@ -232,14 +235,20 @@ def score_table2(source: Path, output_dir: Path) -> Tuple[int, Dict[str, str]]:
             for key in visit_keys:
                 raw_reference = ground_truth[key].get(jp)
                 reference = normalize_ground_truth(raw_reference, kind)
-                prediction = predictions[key][jp]
+                prediction_record = predictions[key][jp]
+                if isinstance(prediction_record, dict) and "normalized" in prediction_record:
+                    prediction = prediction_record["normalized"]
+                    prediction_present = bool(prediction_record["present"])
+                else:
+                    prediction = prediction_record
+                    prediction_present = prediction is not None
                 excluded = reference is None and not blank(raw_reference)
                 current_tp = current_fp = current_fn = 0
                 if not excluded:
-                    if reference is not None and prediction is not None and value_matches(kind, reference, prediction):
+                    if reference is not None and prediction_present and prediction is not None and value_matches(kind, reference, prediction):
                         current_tp = 1
                     else:
-                        if prediction is not None:
+                        if prediction_present:
                             current_fp = 1
                         if reference is not None:
                             current_fn = 1

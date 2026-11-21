@@ -15,7 +15,7 @@ Respiratory Rate (bpm),Conservative,Deepgram,82,1,1,81,50.0,1.2,2.4
 Respiratory Rate (bpm),Conservative,Whisper,82,1,1,81,50.0,1.2,2.4
 Respiratory Rate (bpm),FS-GKP,Deepgram,82,49,40,33,55.1,59.8,57.3
 Respiratory Rate (bpm),FS-GKP,Whisper,82,45,44,37,50.6,54.9,52.6
-SpO2 (%),Conservative,Deepgram,85,2,4,83,33.3,2.4,4.4
+SpO2 (%),Conservative,Deepgram,85,2,5,83,28.6,2.4,4.3
 SpO2 (%),Conservative,Whisper,85,5,3,80,62.5,5.9,10.8
 SpO2 (%),FS-GKP,Deepgram,85,14,75,71,15.7,16.5,16.1
 SpO2 (%),FS-GKP,Whisper,85,16,73,69,18.0,18.8,18.4
@@ -27,7 +27,7 @@ Appetite,Conservative,Deepgram,82,33,15,49,68.8,40.2,50.8
 Appetite,Conservative,Whisper,82,40,15,42,72.7,48.8,58.4
 Appetite,FS-GKP,Deepgram,82,64,25,18,71.9,78.0,74.9
 Appetite,FS-GKP,Whisper,82,62,27,20,69.7,75.6,72.5
-Overall (micro),Conservative,Deepgram,601,89,33,512,73.0,14.8,24.6
+Overall (micro),Conservative,Deepgram,601,89,34,512,72.4,14.8,24.6
 Overall (micro),Conservative,Whisper,601,118,49,483,70.7,19.6,30.7
 Overall (micro),FS-GKP,Deepgram,601,286,336,315,46.0,47.6,46.8
 Overall (micro),FS-GKP,Whisper,601,279,343,322,44.9,46.4,45.6

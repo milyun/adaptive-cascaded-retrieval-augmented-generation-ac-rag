@@ -6,7 +6,7 @@ Research notebooks for the transcript-to-documentation pipeline (information ext
 
 ## Code availability
 
-The source code supporting this work is available at [GitHub](https://github.com/milyun/adaptive-cascaded-retrieval-augmented-generation-ac-rag). The archived v0.1.0 release is available on Zenodo at [doi:10.5281/zenodo.23656597](https://doi.org/10.5281/zenodo.23656597), v0.2.0 is archived at [doi:10.5281/zenodo.24398560](https://doi.org/10.5281/zenodo.24398560), and v0.2.1 is archived at [doi:10.5281/zenodo.24420648](https://doi.org/10.5281/zenodo.24420648). The Zenodo concept DOI is [10.5281/zenodo.23656596](https://doi.org/10.5281/zenodo.23656596). The repository includes the pipeline and prompt notebooks, evaluation modules, configuration, and synthetic example records; clinical data are not included.
+The source code supporting this work is available at [GitHub](https://github.com/milyun/adaptive-cascaded-retrieval-augmented-generation-ac-rag). The archived v0.1.0 release is available on Zenodo at [doi:10.5281/zenodo.23656597](https://doi.org/10.5281/zenodo.23656597), v0.2.0 is archived at [doi:10.5281/zenodo.24398560](https://doi.org/10.5281/zenodo.24398560), v0.2.1 is archived at [doi:10.5281/zenodo.24420648](https://doi.org/10.5281/zenodo.24420648), and v0.2.2 is prepared for publication. The Zenodo concept DOI is [10.5281/zenodo.23656596](https://doi.org/10.5281/zenodo.23656596). The repository includes the pipeline and prompt notebooks, evaluation modules, configuration, and synthetic example records; clinical data are not included.
 
 The clinical data (audio, transcripts, nurse-written records, patient profiles) contain personal health information and cannot be released. See the Data Availability statement in the manuscript for the access procedure. `sample_data/` contains synthetic example records that document the expected file formats.
 
@@ -38,7 +38,7 @@ For a full evaluation, run `batch_evaluate_all_systems.py --source-dir <local-da
 
 | Item | Reproduction code | Output |
 |---|---|---|
-| Table 2 | `reproducibility/table2_scoring.py`, `reproducibility/compute_extraction_prf1_table2.py` | `table2_field_results.csv`, `table2_precision_recall_f1.csv` |
+| Table 2 | `reproducibility/table2_scoring.py`; Conservative uses Stage 1 `extraction_data.value`, and unmappable non-null predictions count as FP + FN | `table2_field_results.csv`, `table2_precision_recall_f1.csv` |
 | Table 2 constant-mode baseline | `reproducibility/compute_constant_mode_baseline_table2.py` | `constant_mode_baseline_table2.csv`, `constant_mode_baseline_table2.md` |
 | Table 3 | `reproducibility/batch_evaluate_all_systems.py`, `reproducibility/compute_tables3_5_statistics.py` | `detailed_per_sample_results.csv`, `table3_system_summary.csv` |
 | Table 3 effect sizes | `reproducibility/compute_tables3_5_statistics.py` | `table3_pairwise_effect_sizes.csv` |
@@ -56,7 +56,7 @@ For a full evaluation, run `batch_evaluate_all_systems.py --source-dir <local-da
 
 ## Suggested Citation
 
-Shoumi MN, Harada K, Oshita H, Sakashita S, Inoue S. Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG): source code and reproducibility materials, v0.2.1. Zenodo. 2026. [doi:10.5281/zenodo.24420648](https://doi.org/10.5281/zenodo.24420648).
+Shoumi MN, Harada K, Oshita H, Sakashita S, Inoue S. Adaptive Cascaded Retrieval-Augmented Generation (AC-RAG): source code and reproducibility materials, v0.2.2. Zenodo. 2026. Version-specific DOI pending publication.
 
 ## License
 
